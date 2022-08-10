@@ -3,17 +3,17 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class BaseService {
-  static BaseService _instance = new BaseService.internal();
+  static BaseService instance = new BaseService.internal();
   static final String baseUrl ="https://api.themoviedb.org/3/" ;
 
   BaseService.internal();
 
-  factory BaseService() => _instance;
+  factory BaseService() => instance;
 
   Future<ServiceResponseModel> getRequest(String path, {int timeOut = 30}) async {
-
-      try {
+     try {
         return http.get(Uri.parse("$baseUrl$path")).timeout(Duration(seconds: timeOut)).then((http.Response response) async {
+          print("getRequest:"+(baseUrl+path)+"");
           int statusCode = response.statusCode;
           if (statusCode == 200) {
             return ServiceResponseModel(isSuccess: true, data: response.body);

@@ -13,31 +13,31 @@ class PreferenceUtils {
     return prefs!;
   }
 
-  static String _getString(String key) {
+  static String getPrefString(String key) {
     return prefs!.getString(key) ?? '';
   }
 
-  static Future<int> _getInt(String key) async {
+  static Future<int> getPrefInt(String key) async {
     final SharedPreferences prefs = await _instance;
     return prefs.getInt(key) ?? 0;
   }
 
-  static Future<bool> _setInt(String key, int value) async {
+  static Future<bool> setPrefInt(String key, int value) async {
     var prefs = await _instance;
     return prefs.setInt(key, value);
   }
 
-  static Future<bool> _setString(String key, String value) async {
+  static Future<bool> setPrefString(String key, String value) async {
     final prefs = await _instance;
     return prefs.setString(key, value);
   }
 
-  static Future<bool> _setBool(String key, bool value) async {
+  static Future<bool> setPrefBool(String key, bool value) async {
     var prefs = await _instance;
     return prefs.setBool(key, value);
   }
 
-  static bool _getBool(String key) {
+  static bool getPrefBool(String key) {
     return prefs!.getBool(key) ?? true;
   }
 
@@ -45,11 +45,4 @@ class PreferenceUtils {
     prefs!.clear();
   }
 
-  static Future<int> getCacheTime() {
-    return _getInt(PREF_CACHE_TIME);
-  }
-
-  static void setCacheTime(int time) {
-    _setInt(PREF_CACHE_TIME, time);
-  }
 }

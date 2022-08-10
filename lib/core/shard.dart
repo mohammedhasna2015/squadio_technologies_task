@@ -2,7 +2,7 @@ import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:squadio_technologies_task/core/navigator/navigation_service.dart';
 
-import 'di.dart';
+import 'init_app.dart';
 
 class Shard {
   Future<bool> checkConnection() async {
@@ -10,13 +10,7 @@ class Shard {
     if (connectivityResult == ConnectivityResult.mobile ||
         connectivityResult == ConnectivityResult.wifi) {
       return true;
-    } else {
-      snackBarMessageContextWithColorLeesTime(
-          getIt<NavigationService>().navigatorKey.currentContext!,
-          "No connection , try again later ",
-          Colors.red);
-      return false;
-    }
+    }else {return false;}
   }
 
   void snackBarMessageContextWithColorLeesTime(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:squadio_technologies_task/features/movie/people_screen.dart';
-import 'package:squadio_technologies_task/core/di.dart';
+import 'package:squadio_technologies_task/features/people/people_screen.dart';
+import 'package:squadio_technologies_task/core/init_app.dart';
 import 'package:squadio_technologies_task/core/navigator/navigation_service.dart';
 import 'package:squadio_technologies_task/routes/router.dart';
 
