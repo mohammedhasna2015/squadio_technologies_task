@@ -8,7 +8,7 @@ import 'package:squadio_technologies_task/features/people/data/models/ResponsePe
 class PeopleRemoteDataSource {
   Future<ResponsePeopleModel> getAllPeople(int page) async {
     ServiceResponseModel response = await BaseService.instance.getRequest(
-      "$all_people?api_key=$keyPeople&language=en-US&page=$page",
+      "$all_people?api_key=$keyApi&language=en-US&page=$page",
     );
     if (response.isSuccess) {
       ResponsePeopleModel responsePeopleModel =
