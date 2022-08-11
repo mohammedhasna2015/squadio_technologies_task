@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:squadio_technologies_task/core/config.dart';
+import 'package:squadio_technologies_task/core/init_app.dart';
+import 'package:squadio_technologies_task/core/navigator/navigation_service.dart';
 import 'package:squadio_technologies_task/features/detailsPeople/data/models/ResponseImagesPeopleModel.dart';
+import 'package:squadio_technologies_task/features/detailsPeople/imageOrignalSizeScreen.dart';
 
 class GridViewImagesPeopleWidget extends StatefulWidget {
   const GridViewImagesPeopleWidget({Key? key, required this.list}) : super(key: key);
@@ -33,12 +36,17 @@ class ItemImagePeopleWidget extends StatefulWidget {
 class _ItemImagePeopleWidgetState extends State<ItemImagePeopleWidget> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height:1000,
-      width: 200,
-      child: Image.network(
-        "https://image.tmdb.org/t/p/w500${widget.profiles!
-          .filePath}",fit: BoxFit.cover,),
+    return GestureDetector(
+      onTap: (){
+        getIt<NavigationService>().navigateTo(ImageOriginalSizeScreen.id,args:"$image_path${widget.profiles!.filePath}");
+      },
+      child: SizedBox(
+        height:1000,
+        width: 200,
+        child: Image.network(
+          "$image_path${widget.profiles!
+            .filePath}",fit: BoxFit.cover,),
+      ),
     );
   }
 }

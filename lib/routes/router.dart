@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:squadio_technologies_task/features/detailsPeople/details_people_screen.dart';
+import 'package:squadio_technologies_task/features/detailsPeople/imageOrignalSizeScreen.dart';
 
 class Routers {
 
@@ -10,6 +11,11 @@ class Routers {
         return MaterialPageRoute(
           builder: (_) =>  DetailsPeopleScreen(idPeople: settings.arguments
           as int,),
+        );
+      case ImageOriginalSizeScreen.id:
+        return MaterialPageRoute(
+          builder: (_) =>  ImageOriginalSizeScreen(imagePath: settings.arguments
+          as String,),
         );
 
       default:
