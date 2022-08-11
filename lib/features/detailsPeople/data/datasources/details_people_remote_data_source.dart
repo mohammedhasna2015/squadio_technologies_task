@@ -4,6 +4,7 @@ import 'package:squadio_technologies_task/core/config.dart';
 import 'package:squadio_technologies_task/core/constants.dart';
 import 'package:squadio_technologies_task/core/preferences_utils.dart';
 import 'package:squadio_technologies_task/features/detailsPeople/data/models/ResponseDetailsPeopleModel.dart';
+import 'package:squadio_technologies_task/features/detailsPeople/data/models/ResponseImagesPeopleModel.dart';
 import 'package:squadio_technologies_task/features/people/data/models/ResponsePeopleModel.dart';
 
 class DetailsPeopleRemoteDataSource {
@@ -17,6 +18,19 @@ class DetailsPeopleRemoteDataSource {
       return responsePeopleModel;
     } else {
       return ResponseDetailsPeopleModel();
+    }
+  }
+
+  Future<ResponseImagesPeopleModel> getImagesPeople(int id) async {
+    ServiceResponseModel response = await BaseService.instance.getRequest(
+      "$details_people$id/images?api_key=$keyApi&language=en-US",
+    );
+    if (response.isSuccess) {
+      ResponseImagesPeopleModel responsePeopleModel =
+      ResponseImagesPeopleModel.fromJson(json.decode(response.data));
+      return responsePeopleModel;
+    } else {
+      return ResponseImagesPeopleModel();
     }
   }
 }

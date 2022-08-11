@@ -21,6 +21,7 @@ class PeopleListWidget extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return PeopleItemWidget(
           name: resultPeopleList![index].name!,
+          id: resultPeopleList![index].id!,
         );
       },
       separatorBuilder: (BuildContext context, int index) {
