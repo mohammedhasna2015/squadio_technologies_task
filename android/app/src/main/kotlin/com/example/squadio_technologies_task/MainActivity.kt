@@ -1,4 +1,4 @@
-package com.example.squadio_technologies_task
+package com.example.test_project
 
 import io.flutter.embedding.android.FlutterActivity
 

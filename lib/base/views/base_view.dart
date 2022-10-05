@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:squadio_technologies_task/base/viewmodels/base_view_model.dart';
+import 'package:test_project/base/viewmodels/base_view_model.dart';
 
 class BaseView<T extends BaseViewModel> extends StatefulWidget {
   final T Function(BuildContext) vmBuilder;
@@ -8,7 +8,8 @@ class BaseView<T extends BaseViewModel> extends StatefulWidget {
 
   // vmBuilder is provider
   // builder is content of screen ui
-  const BaseView({Key? key, required this.vmBuilder, required this.builder}) : super(key: key);
+  const BaseView({Key? key, required this.vmBuilder, required this.builder})
+      : super(key: key);
 
   @override
   _BaseViewState createState() => _BaseViewState<T>();
@@ -25,18 +26,21 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
     );
   }
 
-  Widget _buildScreenContent(BuildContext? context, T? viewModel, Widget? child) => !viewModel!.isInitialized
-      ? Container(color: Colors.white, child: Center(child: CircularProgressIndicator()))
-      : Stack(
-          children: [
-            widget.builder(context!, viewModel),
-            Visibility(
-              visible: viewModel.isLoading,
-              child: Center(
-                child: Center(child: CircularProgressIndicator()),
-              ),
-            )
-          ],
-        );
+  Widget _buildScreenContent(
+          BuildContext? context, T? viewModel, Widget? child) =>
+      !viewModel!.isInitialized
+          ? Container(
+              color: Colors.white,
+              child: Center(child: CircularProgressIndicator()))
+          : Stack(
+              children: [
+                widget.builder(context!, viewModel),
+                Visibility(
+                  visible: viewModel.isLoading,
+                  child: Center(
+                    child: Center(child: CircularProgressIndicator()),
+                  ),
+                )
+              ],
+            );
 }
-

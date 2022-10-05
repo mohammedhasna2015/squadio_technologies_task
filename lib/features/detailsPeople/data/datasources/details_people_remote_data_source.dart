@@ -1,11 +1,9 @@
 import 'dart:convert';
-import 'package:squadio_technologies_task/base/services/base_service.dart';
-import 'package:squadio_technologies_task/core/config.dart';
-import 'package:squadio_technologies_task/core/constants.dart';
-import 'package:squadio_technologies_task/core/preferences_utils.dart';
-import 'package:squadio_technologies_task/features/detailsPeople/data/models/ResponseDetailsPeopleModel.dart';
-import 'package:squadio_technologies_task/features/detailsPeople/data/models/ResponseImagesPeopleModel.dart';
-import 'package:squadio_technologies_task/features/people/data/models/ResponsePeopleModel.dart';
+
+import 'package:test_project/base/services/base_service.dart';
+import 'package:test_project/core/config.dart';
+import 'package:test_project/features/detailsPeople/data/models/ResponseDetailsPeopleModel.dart';
+import 'package:test_project/features/detailsPeople/data/models/ResponseImagesPeopleModel.dart';
 
 class DetailsPeopleRemoteDataSource {
   Future<ResponseDetailsPeopleModel> getDetailsPeople(int id) async {
@@ -14,7 +12,7 @@ class DetailsPeopleRemoteDataSource {
     );
     if (response.isSuccess) {
       ResponseDetailsPeopleModel responsePeopleModel =
-      ResponseDetailsPeopleModel.fromJson(json.decode(response.data));
+          ResponseDetailsPeopleModel.fromJson(json.decode(response.data));
       return responsePeopleModel;
     } else {
       return ResponseDetailsPeopleModel();
@@ -27,7 +25,7 @@ class DetailsPeopleRemoteDataSource {
     );
     if (response.isSuccess) {
       ResponseImagesPeopleModel responsePeopleModel =
-      ResponseImagesPeopleModel.fromJson(json.decode(response.data));
+          ResponseImagesPeopleModel.fromJson(json.decode(response.data));
       return responsePeopleModel;
     } else {
       return ResponseImagesPeopleModel();

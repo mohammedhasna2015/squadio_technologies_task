@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:squadio_technologies_task/features/people/ViewsModels/people_view_model.dart';
-import 'package:squadio_technologies_task/features/people/data/models/ResponsePeopleModel.dart';
-import 'package:squadio_technologies_task/features/people/widget/people_item_widget.dart';
+import 'package:test_project/features/people/ViewsModels/people_view_model.dart';
+import 'package:test_project/features/people/data/models/ResponsePeopleModel.dart';
+import 'package:test_project/features/people/widget/people_item_widget.dart';
 
 class PeopleListWidget extends StatelessWidget {
   final List<People>? resultPeopleList;

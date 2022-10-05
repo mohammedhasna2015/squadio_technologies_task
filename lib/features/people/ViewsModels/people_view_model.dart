@@ -1,11 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:squadio_technologies_task/base/viewmodels/base_view_model.dart';
-import 'package:squadio_technologies_task/features/people/data/models/ResponsePeopleModel.dart';
-import 'package:squadio_technologies_task/features/people/data/repositories/people_repository.dart';
-import 'package:squadio_technologies_task/core/config.dart';
-import 'package:squadio_technologies_task/core/shard.dart';
+import 'package:test_project/base/viewmodels/base_view_model.dart';
+import 'package:test_project/core/shard.dart';
+import 'package:test_project/features/people/data/models/ResponsePeopleModel.dart';
+import 'package:test_project/features/people/data/repositories/people_repository.dart';
 
 class PeopleViewModel extends BaseViewModel {
   PeopleRepository? peopleRepository;

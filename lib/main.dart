@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:squadio_technologies_task/features/people/people_screen.dart';
-import 'package:squadio_technologies_task/core/init_app.dart';
-import 'package:squadio_technologies_task/core/navigator/navigation_service.dart';
-import 'package:squadio_technologies_task/routes/router.dart';
+import 'package:test_project/core/init_app.dart';
+import 'package:test_project/core/navigator/navigation_service.dart';
+import 'package:test_project/features/people/people_screen.dart';
+
+import 'routes/router.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      navigatorKey:getIt<NavigationService>().navigatorKey ,
+      navigatorKey: getIt<NavigationService>().navigatorKey,
       home: PeopleScreen(),
       onGenerateRoute: Routers.generateRoute,
     );

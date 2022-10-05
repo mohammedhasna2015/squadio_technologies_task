@@ -1,9 +1,10 @@
 import 'dart:convert';
-import 'package:squadio_technologies_task/base/services/base_service.dart';
-import 'package:squadio_technologies_task/core/config.dart';
-import 'package:squadio_technologies_task/core/constants.dart';
-import 'package:squadio_technologies_task/core/preferences_utils.dart';
-import 'package:squadio_technologies_task/features/people/data/models/ResponsePeopleModel.dart';
+
+import 'package:test_project/base/services/base_service.dart';
+import 'package:test_project/core/config.dart';
+import 'package:test_project/core/constants.dart';
+import 'package:test_project/core/preferences_utils.dart';
+import 'package:test_project/features/people/data/models/ResponsePeopleModel.dart';
 
 class PeopleRemoteDataSource {
   Future<ResponsePeopleModel> getAllPeople(int page) async {

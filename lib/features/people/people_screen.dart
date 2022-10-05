@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:squadio_technologies_task/base/views/base_view.dart';
-import 'package:squadio_technologies_task/features/people/ViewsModels/people_view_model.dart';
-import 'package:squadio_technologies_task/features/people/data/repositories/people_repository.dart';
-import 'package:squadio_technologies_task/features/people/widget/people_list_widget.dart';
+import 'package:test_project/base/views/base_view.dart';
+import 'package:test_project/features/people/ViewsModels/people_view_model.dart';
+import 'package:test_project/features/people/data/repositories/people_repository.dart';
+import 'package:test_project/features/people/widget/people_list_widget.dart';
 
 class PeopleScreen extends StatefulWidget {
   const PeopleScreen({Key? key}) : super(key: key);

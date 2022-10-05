@@ -1,4 +1,4 @@
-# squadio_technologies_task
+# test_project
 
 A new Flutter project.
 

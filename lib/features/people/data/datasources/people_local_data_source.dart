@@ -1,7 +1,8 @@
 import 'dart:convert';
-import 'package:squadio_technologies_task/core/constants.dart';
-import 'package:squadio_technologies_task/core/preferences_utils.dart';
-import 'package:squadio_technologies_task/features/people/data/models/ResponsePeopleModel.dart';
+
+import 'package:test_project/core/constants.dart';
+import 'package:test_project/core/preferences_utils.dart';
+import 'package:test_project/features/people/data/models/ResponsePeopleModel.dart';
 
 class PeopleLocalDataSource {
   Future<ResponsePeopleModel> getAllPeople(int page) async {
